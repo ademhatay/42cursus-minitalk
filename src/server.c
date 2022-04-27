@@ -14,7 +14,7 @@ static void	ft_convert(char *s)
 	while (i + 1 != 0)
 	{
 		c += pow * (s[i] - '0');
-		pow *= 2;
+		pow = pow * 2;
 		i--;
 	}
 	write(1, &c, 1);
@@ -38,7 +38,7 @@ static void	ft_confirm(int sig)
 	if (sig == SIGUSR2)
 		bits[bitcount - 1] = '0';
 	else
-        bits[bitcount -1] = '1';
+        bits[bitcount - 1] = '1';
 	if (bitcount == 8)
 	{
 		ft_convert(bits);
