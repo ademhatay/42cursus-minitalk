@@ -1,4 +1,8 @@
-#include "minitalk.h"
+#include <stdio.h>
+#include <string.h>
+#include <signal.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 static void	ft_send_msg(int pid, char*str)
 {
@@ -52,19 +56,19 @@ int	main(int ac, char **av)
 
 	if (ac < 3)
 	{
-		ft_printf("Eksik Arguman Girdiniz...");
+		printf("Eksik Arguman Girdiniz...");
 		return (0);
 	}
 	else if (ac > 3)
 	{
-		ft_printf("Fazla Arguman Girdiniz...");
+		printf("Fazla Arguman Girdiniz...");
 		return (0);
 	}
 	pid = atoi(av[1]);
 	bits = ft_to_bit(av[2], 0, 0);
 	if (bits == NULL)
 	{
-		ft_printf("Gerekli alan hafizadan tahsis edilemedi...");
+		printf("Gerekli alan hafizadan tahsis edilemedi...");
 		return (0);
 	}
 	ft_send_msg(pid, bits);

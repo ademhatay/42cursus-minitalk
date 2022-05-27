@@ -1,4 +1,9 @@
-#include "minitalk.h"
+#include <stdio.h>
+#include <string.h>
+#include <signal.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 
 // converts binary to ascii and prints it
 
@@ -50,7 +55,7 @@ static void	ft_confirm(int sig)
 
 int	main(void)
 {
-	ft_printf("Senin PID'in: %d\n", getpid());
+	printf("Senin PID'in: %d\n", getpid());
 	while (1)
 	{
 		signal(SIGUSR1, ft_confirm);
