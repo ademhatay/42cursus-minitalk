@@ -45,23 +45,23 @@ static char	*ft_to_bit(char *s, size_t i, size_t j)
 	return (ret);
 }
 
-
-int     main(int ac, char **av)
+int    main(int argc, char **argv)
 {
-	int	pid;
-	char	*bits;
+    int        pid;
+    char    *bits;
 
-	if (ac < 3)
-		ft_control_av("Missing ");
-	else if (ac > 3)
-		ft_control_av("Too Many ");
-	pid = ft_atoi(av[1]);
-	bits = ft_to_bit(av[2], 0, 0);
-	if (bits == NULL)
-	{
-		ft_putendl("Required space could not be allocated from memory");
-		return (0);
-	}
-	ft_send_msg(pid, bits);
-	free(bits);	
+    if (argc != 3)
+    {
+        ft_putendl("wrong number of arguments");
+        return (0);
+    }
+    pid = ft_atoi(argv[1]);
+    bits = ft_to_bit(argv[2], 0, 0);
+    if (bits == NULL)
+    {
+        ft_putendl("allocation went wrong");
+        return (0);
+    }
+    ft_send_msg(pid, bits);
+    free(bits);
 }

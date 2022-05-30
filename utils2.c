@@ -35,15 +35,6 @@ int    ft_atoi(const char *str)
     return (num * neg);
 }
 
-void    ft_control_av(char*str)
-{
-    ft_putstr("\x1b[31mERROR\x1b[0m: You Have Entered ");
-    ft_putstr(str);
-    ft_putendl("Argument...");
-    ft_putendl("\x1b[32mCorrect\x1b[0m Usage should be...");
-    ft_putendl("\t\t\x1b[36m./client <PID> `message`\t\t\x1b[0m");
-}
-
 void    *ft_calloc(size_t count, size_t size)
 {
     char    *c;
