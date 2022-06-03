@@ -12,7 +12,7 @@
 
 #include "minitalk.h"
 
-static void	ft_convert(char *s)
+static void	ft_convert_char(char *s)
 {
 	int				pow;
 	unsigned char	c;
@@ -47,7 +47,7 @@ static void	ft_confirm(int sig)
 		bits[bitcount - 1] = '1';
 	if (bitcount == 8)
 	{
-		ft_convert(bits);
+		ft_convert_char(bits);
 		free(bits);
 		bits = NULL;
 	}
