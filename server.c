@@ -1,5 +1,16 @@
-#include "minitalk.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahatay <ahatay@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 10:20:07 by ahatay            #+#    #+#             */
+/*   Updated: 2022/06/03 10:20:10 by ahatay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "minitalk.h"
 
 static void	ft_convert(char *s)
 {
@@ -23,8 +34,7 @@ static void	ft_confirm(int sig)
 {
 	static char	*bits;
 	static int	bitcount;
-    
-    
+
 	bitcount++;
 	if (bits == NULL)
 	{
@@ -42,7 +52,6 @@ static void	ft_confirm(int sig)
 		bits = NULL;
 	}
 }
-
 
 int	main(void)
 {

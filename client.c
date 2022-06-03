@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahatay <ahatay@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 10:20:18 by ahatay            #+#    #+#             */
+/*   Updated: 2022/06/03 10:20:19 by ahatay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 static void	ft_send_msg(int pid, char *s)
@@ -45,23 +57,23 @@ static char	*ft_to_bit(char *s, size_t i, size_t j)
 	return (ret);
 }
 
-int    main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    int        pid;
-    char    *bits;
+	int		pid;
+	char	*bits;
 
-    if (argc != 3)
-    {
-        ft_putendl("wrong number of arguments");
-        return (0);
-    }
-    pid = ft_atoi(argv[1]);
-    bits = ft_to_bit(argv[2], 0, 0);
-    if (bits == NULL)
-    {
-        ft_putendl("allocation went wrong");
-        return (0);
-    }
-    ft_send_msg(pid, bits);
-    free(bits);
+	if (argc != 3)
+	{
+		ft_putendl("wrong number of arguments");
+		return (0);
+	}
+	pid = ft_atoi(argv[1]);
+	bits = ft_to_bit(argv[2], 0, 0);
+	if (bits == NULL)
+	{
+		ft_putendl("allocation went wrong");
+		return (0);
+	}
+	ft_send_msg(pid, bits);
+	free(bits);
 }
