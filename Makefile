@@ -1,3 +1,5 @@
+name: minitalk.a
+
 all:
 	@gcc -Wall -Wextra -Werror ./server.c ./utils1.c ./utils2.c -o server
 	@gcc -Wall -Wextra -Werror ./client.c ./utils1.c ./utils2.c -o client
