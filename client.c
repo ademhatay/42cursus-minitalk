@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	pid = ft_atoi(argv[1]);
-	bits = ft_convert_bit(argv[2], 0, 0); 
+	bits = ft_convert_bit(argv[2], 0, 0);
 	if (bits == NULL)
 	{
 		ft_putendl("allocation went wrong");

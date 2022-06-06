@@ -12,7 +12,7 @@
 
 #include "minitalk.h"
 
-static void	ft_convert_char(char *s)
+static void	ft_convert_char(char *str)
 {
 	int				pow;
 	unsigned char	c;
@@ -20,17 +20,17 @@ static void	ft_convert_char(char *s)
 
 	pow = 1;
 	c = 0;
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(str) - 1;
 	while (i + 1 != 0)
 	{
-		c += pow * (s[i] - '0');
+		c += pow * (str[i] - '0');
 		pow = pow * 2;
 		i--;
 	}
 	write(1, &c, 1);
 }
 
-static void	ft_confirm(int sig)
+static void	ft_confirm(int signal)
 {
 	static char	*bits;
 	static int	bitcount;
@@ -41,7 +41,7 @@ static void	ft_confirm(int sig)
 		bits = ft_strdup("");
 		bitcount = 1;
 	}
-	if (sig == SIGUSR2)
+	if (signal == SIGUSR2)
 		bits[bitcount - 1] = '0';
 	else
 		bits[bitcount - 1] = '1';
