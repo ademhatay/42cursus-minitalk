@@ -28,26 +28,26 @@ static void	ft_send_message(int pid, char *bits)
 	}
 }
 
-static char	*ft_convert_bit(char *s, size_t i, size_t j)
+static char	*ft_convert_bit(char *str, size_t i, size_t j)
 {
 	char	*ret;
 	int		c;
 	int		bytes;
 
-	i = ft_strlen(s);
+	i = ft_strlen(str);
 	ret = ft_calloc(i * 8 + 1, sizeof(char));
 	if (ret == NULL)
 		return (NULL);
 	while (i + 1 != 0)
 	{
-		c = s[i - 1];
+		c = str[i - 1];
 		bytes = 8;
 		while (bytes > 0)
 		{
 			if (c % 2 == 1)
-				ret[ft_strlen(s) * 8 - j - 1] = '1';
+				ret[ft_strlen(str) * 8 - j - 1] = '1';
 			else
-				ret[ft_strlen(s) * 8 - j - 1] = '0';
+				ret[ft_strlen(str) * 8 - j - 1] = '0';
 			c = c / 2;
 			j++;
 			bytes--;
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	pid = ft_atoi(argv[1]);
-	bits = ft_convert_bit(argv[2], 0, 0);
+	bits = ft_convert_bit(argv[2], 0, 0); 
 	if (bits == NULL)
 	{
 		ft_putendl("allocation went wrong");
