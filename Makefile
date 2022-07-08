@@ -1,8 +1,12 @@
-name: minitalk.a
+NAME = minitalk.a
+
+FLAG = -Wall -Wextra -Werror
+
+CC = gcc
 
 all:
-	gcc -Wall -Wextra -Werror ./server.c ./utils1.c ./utils2.c -o server
-	gcc -Wall -Wextra -Werror ./client.c ./utils1.c ./utils2.c -o client
+	$(CC) $(FLAG) ./server.c ./utils1.c ./utils2.c -o server
+	$(CC) $(FLAG) ./client.c ./utils1.c ./utils2.c -o client
 
 clean:
 	rm -rf server

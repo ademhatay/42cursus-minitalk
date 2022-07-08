@@ -35,10 +35,10 @@ static char	*ft_convert_bit(char *str, size_t i, size_t j)
 	int		bytes;
 
 	i = ft_strlen(str);
-	ret = ft_calloc(i * 8 + 1, sizeof(char));
+	ret = ft_calloc(i * 8, sizeof(char));
 	if (ret == NULL)
 		return (NULL);
-	while (i + 1 != 0)
+	while (i != 0)
 	{
 		c = str[i - 1];
 		bytes = 8;
