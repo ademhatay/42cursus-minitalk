@@ -5,7 +5,7 @@
 The purpose of this project is to code a small data exchange program
 using UNIX signals.
 
-100 / 100 SUCCESS
+[![ahatay's 42 minitalk Score](https://badge42.vercel.app/api/v2/cl13inawu000609kzjcd3ovmg/project/2646548)](https://github.com/ademhatay/42cursus-minitalk)
 
 ## Usage
 
